@@ -9,6 +9,31 @@ else
 fi
 }
 
+function add_Education() {
+HAS_EDU=`zypper lr -d | grep "http://download.opensuse.org/repositories/Education"`
+if [ -z "$HAS_EDU" ]; then
+    zypper -n ar http://download.opensuse.org/repositories/Education/${DISTRIB_ID}_${DISTRIB_VERSION} Education
+else
+    echo 'Education 套件庫已經存在'
+fi
+}
 
+function add_packman() {
+HAS_PACKMAN=`zypper lr -d | grep "http://packman.mirrors.skynet.be/pub/packman/suse"`
+if [ -z "$HAS_PACKMAN" ]; then
+    zypper -n ar http://packman.mirrors.skynet.be/pub/packman/suse/${DISTRIB_VERSION} Packman Repository
+else
+    echo 'Packman 套件庫已經存在'
+fi
+}
+
+function add_standard() {
+HAS_EDU=`zypper lr -d | grep "http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}/standard"`
+if [ -z "$HAS_EDU" ]; then
+    zypper -n ar http://download.opensuse.org/repositories/${DISTRIB_ID}:/${DISTRIB_VERSION}/standard standard
+else
+    echo 'Standard 套件庫已經存在'
+fi
+}
 
 #END

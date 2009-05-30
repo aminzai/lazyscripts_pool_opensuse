@@ -1,23 +1,24 @@
 #!/bin/bash
 # -*- coding: utf-8 -*-
 # Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
-# Last Modified: 24 Apr 2009
+# Last Modified: 18 May 2009
 # Released under GNU General Public License
 # Please run as root.
 #
-# @name_enUS '' 
-# @name_zhTW '安裝 VLC Media Player 播放程式'
+# @name_zhTW '安裝 PlayOnLinux'
+# @name_enUS ''
+# @desc_zhTW 'PlayOnLinux 是一款快速好用的 Wine 前端界面，可以幫助您無痛在Linux上面安裝各式Windows原生軟體。'
 # @desc_enUS ''
-# @desc_zhTW 'VLC Media Player 是一款影音品質高的播放軟體，支援大多數常見影音格式。'
-# @category 'Entertain'
+# @category 'Customize'
 # @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @author '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @license 'GPL'
-# @openSUSE ''
+# @opensuse ''
 # @platform 'i386 amd64'
 
 echo
-echo '[1;33;41m 安裝 VLC Media Player... [m'
+echo '[1;33;41m 安裝 PlayOnLinux... [m'
 echo
 
-zypper --non-interactive --no-refresh in vlc
+zypper --non-interactive --no-refresh in playonlinux
+

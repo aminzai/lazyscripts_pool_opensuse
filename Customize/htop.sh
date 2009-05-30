@@ -15,6 +15,10 @@
 # @opensuse
 # @platform 'i386 amd64'
 
-zypper -n install htop
+echo
+echo '[1;33;41m 安裝 htop... [m'
+echo
+
+zypper --non-interactive --no-refresh install htop
 
 #END

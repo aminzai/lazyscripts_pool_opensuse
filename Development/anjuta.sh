@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
 #
-# @name_enUS 'Install Eclipse'
-# @name_zhTW '安裝 Eclipse'
-# @desc_enUS 'Eclipse is a multi-language software development platform comprising an IDE and a plug-in system to extend it.'
-# @desc_zhTW 'Eclipse 是一個跨平台的程式撰寫工具，支援多種程式語言。'
+# @name_enUS 'Install Anjuta IDE'
+# @name_zhTW '安裝 Anjuta IDE'
+# @desc_enUS 'A GNOME development IDE, for C/C++'
+# @desc_zhTW '一個好用的 C/C++ IDE'
 # @warn_enUS ''
 # @warn_zhTW ''
 # @category 'Development'
@@ -16,8 +16,7 @@
 # @platform 'i386 amd64'
 
 echo
-echo '[1;33;41m 安裝 Eclipse... [m'
+echo '[1;33;41m Install Anjuta IDE... [m'
 echo
 
-zypper --non-interactive --no-refresh in eclipse
-
+zypper --non-interactive --no-refresh in anjuta

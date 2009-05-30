@@ -17,5 +17,9 @@
 # @debian
 # @platform 'i386 amd64'
 
- zypper -n install amule
+echo 
+echo '[1;33;41m 安裝 aMule... [m'
+echo 
+
+zypper --non-interactive --no-refresh in amule
 

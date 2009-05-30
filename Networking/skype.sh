@@ -19,14 +19,18 @@
 # @openSUSE ''
 # @platform 'i386 AMD64'
 # @child 'Common/add-zypper-sources'
+
 source add-zypper-sources
 add_standard
 
-echo "下載並安裝Skype網路電話..."
+echo
+echo '[1;33;41m 下載並安裝 Skype 網路電話... [m'
+echo
+
 mkdir -p ./temp/skype
 case $PLAT_NAME in 
 	'i686'|'i386')
-		zypper -n in libqt4 libqt4-x11 libqt4-dbus-1 libsigc++2
+		zypper --non-interactive --no-refresh in libqt4 libqt4-x11 libqt4-dbus-1 libsigc++2
 		pushd ./temp/skype
 		$WGET 'http://www.skype.com/go/getskype-linux-suse'
 		zypper -n in *.rpm
@@ -34,8 +38,7 @@ case $PLAT_NAME in
 		rm -rf ./temp
 	;;
 	'x86_64')
-		zypper -n in libqt4 libqt4-x11 libqt4-dbus-1 libsigc++2
-		zypper -n in libqt4-32bit libqt4-x11-32bit libqt4-dbus-1-32bit libsigc++2-32bit
+		zypper --non-interactive --no-refresh in libqt4 libqt4-x11 libqt4-dbus-1 libsigc++2 libqt4-32bit libqt4-x11-32bit libqt4-dbus-1-32bit libsigc++2-32bit
 		pushd ./temp/skype
 		$WGET 'http://www.skype.com/go/getskype-linux-suse'
 		zypper -n in *.rpm
@@ -43,6 +46,8 @@ case $PLAT_NAME in
 		rm -rf ./temp
 	;;
 	*)
-		echo "Skype 目前不支援 $PLAT_NAME 硬體架構，取消安裝。"
+		echo
+		echo '[31mSkype 目前不支援 $PLAT_NAME 硬體架構，取消安裝。[m'
+		echo
 	;;
 esac

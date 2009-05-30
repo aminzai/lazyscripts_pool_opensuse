@@ -1,6 +1,6 @@
 #!/bin/bash 
 # -*- coding: utf-8 -*-
-# Copyright (C) 2009 王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>
+# Copyright (C) 2009 張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>
 #
 # @name_enUS 'Install Code::Blocks IDE'
 # @name_zhTW '安裝 Code::Blocks '
@@ -9,55 +9,27 @@
 # @warn_enUS ''
 # @warn_zhTW ''
 # @category 'Development'
-# @maintaner '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
-# @author '王綱民 Kang-Min Wang (Aminzai,阿民) <lagunawang -AT- gmail.com>'
+# @maintaner '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
+# @author '張君平 Chun-Ping Chang (mrmoneyc) <moneyc.net -AT- gmail.com>'
 # @license 'GPL'
-# @debian
-# @ubuntu 
+# @opensuse ''
 # @platform 'i386 amd64'
 
-echo "Install Code::Block"
+echo
+echo '[1;33;41m 安裝 Code::Block... [m'
+echo
 
-mkdir -p ./temp/codeblocks/
-
-TOP_DIR=$PWD
-
-cd ./temp/codeblocks/
-
-#Get deb 
-
-case $DISTRO_ID in
-    "Debian")
-		case $PLAT_NAME in 
-			"i386")
-    			wget http://nchc.dl.sourceforge.net/sourceforge/codeblocks/codeblocks-8.02debian-i386.tar.gz
-			;;
-			"x86_64")
-				wget http://nchc.dl.sourceforge.net/sourceforge/codeblocks/codeblocks-8.02debian-amd64.tar.gz 	
-			;;
-		esac
-		;;
-    "Ubuntu")
-		case $PLAT_NAME in
-			"i686")
-				wget http://nchc.dl.sourceforge.net/sourceforge/codeblocks/codeblocks_8.02-0ubuntu1.deb.tar.gz
-			;;
-			"x86_64")
-				wget http://nchc.dl.sourceforge.net/sourceforge/codeblocks/codeblocks-8.02-amd64.tar.gz
-			;;
-		esac
+case $PLAT_NAME in
+	'i386'|'i686')
+		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/i586/codeblocks-r5593-1.1.i586.rpm
+		break;
+	;;
+	'x86_64')
+		zypper --non-interactive --no-refresh in http://download.opensuse.org/repositories/devel:/tools:/ide/openSUSE_11.1/x86_64/codeblocks-r5593-1.1.x86_64.rpm
+		break;
 	;;
 	*)
-	echo "Sorry, Lazyscripts not support $DISTRO_ID"
+		echo "Code::Block 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
 	;;
 esac
 
-tar zxvf *.tar.gz
-
-dpkg -i *.deb
-
-cd $TOP_DIR
-
-
-
-#END

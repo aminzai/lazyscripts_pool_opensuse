@@ -16,16 +16,22 @@
 # @opensuse 
 # @platform 'i386 amd64'
 
-case $PLAT_NAME in
+case "$PLAT_NAME" in
 	"i686"|"i386")
+		echo
+		echo '[1;33;41m 安裝 MultiGet... [m'
+		echo
 		zypper -n install http://download.opensuse.org/repositories/network:/utilities/openSUSE_10.3/i586/multiget-1.1.4-5.1.i586.rpm
-		echo "MultiGet 安裝完成。"
 	;;
 	"x86_64")
+		echo
+		echo '[1;33;41m 安裝 MultiGet... [m'
+		echo
 		zypper -n install http://download.opensuse.org/repositories/network:/utilities/openSUSE_10.3/x86_64/multiget-1.1.4-5.1.x86_64.rpm
-		echo "MultiGet 安裝完成。"
 	;;
 	*)
-		echo "MultiGet 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。"
+		echo
+		echo '[31mMultiGet 目前尚未支援 $PLAT_NAME 硬體架構，取消安裝。[m'
+		echo
 	;;
 esac
